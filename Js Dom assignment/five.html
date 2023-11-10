@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Dom Q5</title>
+    <style>
+        .dispNone{
+            display: none;
+        }
+        img{
+            width: 500px;
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">Your image is visible.</h1>
+    <button id="toggleBtn">Toggle Image</button>
+    <img src="https://learn.pwskills.com/_next/image?url=https%3A%2F%2Fcdn.pwskills.com%2Fassets%2Fuploads%2Fthumbnails%2F642152e5af09d60df056811a.png&w=1920&q=75" alt="" id="image">
+</body>
+<script>
+    const heading = document.getElementById("heading");
+    const toggleBtn=document.getElementById("toggleBtn");
+    const image=document.getElementById("image");
+    toggleBtn.onclick=(()=>{
+        image.classList.toggle('dispNone');
+        if(image.className=='dispNone'){
+            heading.innerText="Your image is hidden.";
+        }
+        else{
+            heading.innerText="Your image is visible.";
+        }
+    })
+</script>
+</html>

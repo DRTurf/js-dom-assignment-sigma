@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Dom Q9</title>
+</head>
+<body>
+    <div id="status">
+        <button id="loginBtn">Login</button>
+        <button id="logoutBtn">LogOut</button>
+        <h1 id="heading"></h1>
+    </div>
+    <script>
+        const loginBtn = document.getElementById("loginBtn");
+        const logoutBtn = document.getElementById("logoutBtn");
+        const heading = document.getElementById("heading");
+        loginBtn.onclick=((e)=>{
+            localStorage.setItem("auth",true);
+            heading.innerText = "User is logged In";
+        })
+        logoutBtn.onclick=((e)=>{
+            localStorage.setItem("auth",false);
+            heading.innerText = "User has logged Out";
+        })
+    </script>
+</body>
+</html>

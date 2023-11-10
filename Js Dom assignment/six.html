@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Dom Q6</title>
+</head>
+<body style="display: flex; align-items: center;">
+    <h3 style="display: inline;margin-right: 5px;">Which is favorite Programming Language :</h3>
+    <form action="#">
+        <select name="languages" id="select_menu">
+        </select>
+    </form>
+    <script>
+        const select_menu=document.getElementById("select_menu");
+        const optionList=["JavaScript","Java","Python","C++"];
+        optionList.map((ele)=>{
+            const option=document.createElement("option");
+            option.value=ele;
+            option.innerText=ele;
+            select_menu.appendChild(option);
+        })
+    </script>
+</body>
+</html>

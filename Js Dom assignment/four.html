@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Dom Q4</title>
+    <style>
+        form{
+            margin: auto;
+        }
+        .input{
+            margin: 10px;
+        }
+        form{
+            width: 30%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <h1 style="margin-left: 10px;">Sign Up Form</h1>
+        <div class="input">
+            <label for="user_name">Name:</label>
+            <input type="text" id="user_name" placeholder="(Minimun 3 characters)">
+        </div>
+        <div class="input">
+            <label for="user_email">Email:</label>
+            <input type="email" id="user_email" placeholder="Enter Your Email">
+        </div>
+        <div class="input">
+            <label for="user_password">Password:</label>
+            <input type="password" id="user_password" placeholder="(Minimun 8 characters)">
+        </div>
+        <button style="margin-left: 10px;" id="submit_button">Submit</button>
+    </form>
+    <script>
+        const name=document.getElementById("user_name");
+        const submitBtn=document.getElementById("submit_button");
+        const password=document.getElementById("user_password");
+        const email=document.getElementById("user_email");
+        let name_val;
+        let password_val;
+        let email_val;
+        const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+        name.onchange=((e)=>{
+            name_val=e.target.value;
+        })
+        password.onchange=((e)=>{
+            password_val=e.target.value;
+        })
+        email.onchange=((e)=>{
+            email_val=e.target.value;
+        })
+        submitBtn.onclick=((e)=>{
+            e.preventDefault();
+            if(name_val.length>=3 && password_val.length>=8 && email_val.match(emailRegex)){
+                alert("Form Validation Successfull !!");
+            }
+            else{
+                alert("Form Validation Failed !!");
+            }
+        })
+    </script>
+</body>
+</html>

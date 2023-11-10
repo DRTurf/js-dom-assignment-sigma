@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Dom Q7</title>
+</head>
+<body>
+    <input type="search" name="" id="search_id" placeholder="Search for items">
+    <h1>Results:</h1>
+    <ul id="item_list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Tailwind CSS</li>
+        <li>GitHub</li>
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    const search_id=document.getElementById("search_id");
+    const item_list=document.getElementById("item_list").getElementsByTagName("li");
+    let input;
+    search_id.onkeyup=((e)=>{
+        input=e.target.value.toLowerCase();
+        for(let i=0;i<item_list.length;i++){
+            if(item_list[i].innerText.toLowerCase().includes(input)){
+                item_list[i].style.display="block";
+            }
+            else{
+                item_list[i].style.display="none";
+            }
+        }
+    })
+    
+</script>
+</html>

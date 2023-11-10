@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Dom Q3</title>
+    <style>
+        span{
+            font-size: 35px;
+            font-weight: bold;
+            margin: 0px 10px 0px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Counter</h1>
+    <button id="plus">+</button><span id="number">0</span><button id="minus">-</button>
+    <script>
+        const plus=document.getElementById("plus");
+        const minus=document.getElementById("minus");
+        const number=document.getElementById("number");
+        let count=0;
+        plus.onclick=(()=>{
+            count++;
+            number.innerHTML=count;
+        })
+        minus.onclick=(()=>{
+            if(count!==0){
+                count--;
+                number.innerHTML=count;
+            }
+            else{
+                alert("Counter is going beyond 0.");
+            }
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Dom Q8</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+        }
+        #timer{
+            border: 2px solid #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body style="background: black; color: white;">
+    <div id="timer" >
+        <span id="hours">00</span><span>:</span>
+        <span id="minutes">00</span><span>:</span>
+        <span id="seconds">00</span>
+    </div>
+    <script>
+        function timeChange(){
+            const currentTime=new Date();
+            const hours=currentTime.getHours().toString().padStart(2, "0");
+            const minutes=currentTime.getMinutes().toString().padStart(2, "0");
+            const seconds=currentTime.getSeconds().toString().padStart(2, "0");
+            const hexCode=`#${hours}${minutes}${seconds}`;
+            console.log(hexCode);
+
+            document.getElementById("hours").innerText=hours;
+            document.getElementById("minutes").innerText=minutes;
+            document.getElementById("seconds").innerText=seconds;
+            document.body.style.backgroundColor=hexCode;
+        }
+        setInterval(timeChange,1000);
+    </script>
+</body>
+</html>

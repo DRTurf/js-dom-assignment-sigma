@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Dom Q1</title>
+</head>
+<body>
+    <h1>Update Profile Picture</h1>
+    <input id="image-input"type="file" accept="image/jpeg, image/png, imsge/jpg">
+    <h2>Your Profile Picture</h2>
+    <img id="profile_pic"src="" alt="No Profile Picture">
+    <script>
+        const input = document.getElementById("image-input");
+        const profilePic= document.getElementById("profile_pic");
+        input.onchange=(()=>{
+            profilePic.src=URL.createObjectURL(input.files[0]);
+        })
+    </script>
+</body>
+</html>

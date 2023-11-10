@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Dom Q2</title>
+    <style>
+        .dark{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">This is Light Mode</h1>
+    <button id="toggle_button">Toogle Theme</button>
+    <script>
+        const body=document.body;
+        const heading= document.getElementById("heading");
+        const toggle_button=document.getElementById('toggle_button');
+        toggle_button.addEventListener('click',()=>{
+            body.classList.toggle('dark');
+            if(body.className=='dark'){
+                heading.innerText="This is Dark Mode";
+            }
+            else{
+                heading.innerText="This is Light Mode";
+            }
+        })
+    </script>
+</body>
+</html>
